@@ -1,18 +1,58 @@
-import React, { createContext } from 'react'
-const FriendContext = createContext()
-function FriendProvider({children}) {
-const [callHistory, setCallHistory] = useState([])
-    const handleConnection = (connectionType) =>{
-        if(connectionType ==="Call"){
+import { useState } from "react";
+import { FriendContext } from "./HistoryContext";
+import { ToastContainer, toast } from 'react-toastify';
+function FriendProvider({ children }) {
+    const [allHistory, setAllHistory] = useState([])
+
+    const addToHistory = ({ name, type }) => {
+        if (type === 'Call') {
+            const newEntry = {
+                id: Date.now(),
+                time: new Date().toLocaleTimeString(),
+                type: "Call",
+                timestamp: new Date().toISOString(),
+            };
+
+            setAllHistory([newEntry, ...allHistory]);
+        }
+        else if (type === 'Massage') {
+            const newEntry = {
+                id: Date.now(),
+                time: new Date().toLocaleTimeString(),
+                type: "Massage",
+                timestamp: new Date().toISOString(),
+            };
+
+            setAllHistory([newEntry, ...allHistory]);
+        }
+        else if (type === 'Video') {
+            const newEntry = {
+                id: Date.now(),
+                time: new Date().toLocaleTimeString(),
+                type: "Video",
+                timestamp: new Date().toISOString(),
+            };
+
+            setAllHistory([newEntry, ...allHistory]);
+        }
+       
+
+    }
+
+     const data = {
+            addToHistory,
+            allHistory,
+            setAllHistory,
+            name,
+            
             
         }
-            
-    }
-  return (
-    <FriendContext value={data}>
-        {children}
-    </FriendContext>
-  )
+
+    return (
+        <FriendContext.Provider value={data}>
+            {children}
+        </FriendContext.Provider>
+    )
 }
 
-export default FriendContext
+export default FriendProvider

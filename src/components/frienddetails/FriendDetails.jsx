@@ -1,4 +1,4 @@
-import React, { use, useState } from 'react'
+import React, { use, useContext, useState } from 'react'
 import { RiTimerFlashLine } from "react-icons/ri";
 import { RiArchiveLine } from "react-icons/ri";
 import { RiDeleteBin6Line } from "react-icons/ri";
@@ -7,11 +7,16 @@ import { LuPhoneCall } from "react-icons/lu";
 import { MdOutlineTextsms } from "react-icons/md";
 import { MdHistory } from "react-icons/md";
 import { useParams } from 'react-router';
+  import { ToastContainer, toast } from 'react-toastify';
+import { FriendContext } from '../friendcontext/HistoryContext';
+
+ 
+
 
 const friendPromise = fetch('/friends.json').then(res => res.json())
 
 function FriendDetails() {
-
+    const { addToHistory} = useContext(FriendContext)
 
     const friends = use(friendPromise)
     const { friendId } = useParams()
@@ -34,13 +39,14 @@ function FriendDetails() {
     const [callHistory, setCallHistory] = useState([]);
 
     const handleConnection = (type) => {
-        console.log(type)
+         addToHistory({name, type})
         if (type === 'Call') {
             const newEntry = {
                 id: Date.now(),
                 time: new Date().toLocaleTimeString(),
                 type: "Call",
             };
+            toast.success(`Calling ${name}`)
             setCallHistory([newEntry, ...callHistory]);
         }
         else if (type === 'Massage') {
@@ -49,6 +55,7 @@ function FriendDetails() {
                 time: new Date().toLocaleTimeString(),
                 type:"Massage",
             };
+            toast.success(`Massage sending ${name}`)
             setCallHistory([newEntry, ...callHistory]);
         }
         else if (type === 'Video') {
@@ -57,8 +64,10 @@ function FriendDetails() {
                 time: new Date().toLocaleTimeString(),
                 type:"Video",
             };
+            toast.success(` Video Calling ${name}`)
             setCallHistory([newEntry, ...callHistory]);
         }
+       
     }
         return (
 
