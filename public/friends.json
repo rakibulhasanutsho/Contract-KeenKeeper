@@ -131,18 +131,7 @@
     "goal": 14,
     "next_due_date": "2026-04-21"
   },
-  {
-    "id": 12,
-    "name": "Omar Hassan",
-    "picture": "https://images.unsplash.com/photo-1501196356655-6df565010495?w=400&h=400&fit=crop",
-    "email": "ohassan@logistics.com",
-    "days_since_contact": 170,
-    "status": "Overdue",
-    "tags": ["business", "client"],
-    "bio": "Primary contact for warehouse logistics.",
-    "goal": 180,
-    "next_due_date": "2025-10-01"
-  },
+ 
   {
     "id": 13,
     "name": "Isabella Smith",
@@ -167,18 +156,7 @@
     "goal": 30,
     "next_due_date": "2026-04-17"
   },
-  {
-    "id": 15,
-    "name": "Tanya Gupta",
-    "picture": "https://images.unsplash.com/photo-1567532939604-b6b5b0db2a04?w=400&h=400&fit=crop",
-    "email": "tanya.g@yoga.com",
-    "days_since_contact": 3,
-    "status": "On-Track",
-    "tags": ["fitness", "friend"],
-    "bio": "Yoga instructor.",
-    "goal": 7,
-    "next_due_date": "2026-04-19"
-  },
+  
   {
     "id": 16,
     "name": "Brian Walsh",
@@ -238,5 +216,30 @@
     "bio": "Runs the local book club.",
     "goal": 30,
     "next_due_date": "2026-04-05"
+  },
+  {
+    "id": 1,
+    "name": "Sarah Jenkins",
+    "picture": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
+    "email": "s.jenkins@email.com",
+    "days_since_contact": 15,
+    "status": "overdue",
+    "tags": ["work", "mentor"],
+    "bio": "Former manager at TechCorp. Great for career advice.",
+    "goal": 14,
+    "next_due_date": "2026-04-10"
+  },
+  {
+    "id": 2,
+    "name": "Arjun Mehta",
+    "picture": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+    "email": "amehta@webmail.com",
+    "days_since_contact": 13,
+    "status": "almost due",
+    "tags": ["college", "friend"],
+    "bio": "Roommate from sophomore year. Plays Valorant.",
+    "goal": 14,
+    "next_due_date": "2026-04-16"
   }
+
 ]

@@ -17,11 +17,11 @@ function AllFriends({friend}) {
         <ul className='flex gap-2 justify-center'>
             {
                 tags.map((tag, ind) => 
-                    <li key={ind} className='text-red-500'>{tag}</li>
+                    <li key={ind} className="text-green-900 bg-green-200 px-3 p-1 border border-green-500 rounded-2xl">{tag}</li>
                 )
             }
         </ul>
-        <p>{status}</p>
+        <p className={`text-white rounded-2xl px-2 p-1 font-medium  ${status === "Overdue" ? "bg-red-500":status ==='On-Track'? "bg-green-700" :"bg-amber-500"}`}>{status}</p>
 
     </div>
   )
