@@ -1,17 +1,17 @@
 import React from 'react'
-import { useLoaderData } from 'react-router'
+import { useLoaderData, useParams } from 'react-router'
 import FriendDetails from '../../components/frienddetails/FriendDetails'
 
 function FriendDetailsPage({}) {
   const friends = useLoaderData()
+  const {friendId} = useParams()
   
   return (
    <div className='w-[1140px] mx-auto'>
-        {
-          friends.map((friend, index) => <div key={index}>
-            <FriendDetails friend={friend}></FriendDetails>
-          </div>)
-        }
+        <div>
+            <FriendDetails friends={friends} friendId={friendId} ></FriendDetails>
+          </div>
+        
    </div>
   )
 }
