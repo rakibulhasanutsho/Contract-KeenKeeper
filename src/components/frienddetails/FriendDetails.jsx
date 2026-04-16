@@ -16,8 +16,9 @@ import { FriendContext } from '../friendcontext/HistoryContext';
 const friendPromise = fetch('/friends.json').then(res => res.json())
 
 function FriendDetails() {
-    const { addToHistory} = useContext(FriendContext)
 
+    const { addToHistory} = useContext(FriendContext)
+    
     const friends = use(friendPromise)
     const { friendId } = useParams()
     const friend = friends?.find(friend => friend.id == friendId)
@@ -34,7 +35,7 @@ function FriendDetails() {
 
 
     } = friend
-
+    // addToHistory({name})
 
     const [callHistory, setCallHistory] = useState([]);
 
@@ -45,6 +46,7 @@ function FriendDetails() {
                 id: Date.now(),
                 time: new Date().toLocaleTimeString(),
                 type: "Call",
+                name:name
             };
             toast.success(`Calling ${name}`)
             setCallHistory([newEntry, ...callHistory]);
@@ -54,6 +56,7 @@ function FriendDetails() {
                 id: Date.now(),
                 time: new Date().toLocaleTimeString(),
                 type:"Massage",
+                name:name
             };
             toast.success(`Massage sending ${name}`)
             setCallHistory([newEntry, ...callHistory]);
@@ -63,6 +66,7 @@ function FriendDetails() {
                 id: Date.now(),
                 time: new Date().toLocaleTimeString(),
                 type:"Video",
+                name:name
             };
             toast.success(` Video Calling ${name}`)
             setCallHistory([newEntry, ...callHistory]);

@@ -11,6 +11,7 @@ function FriendProvider({ children }) {
                 time: new Date().toLocaleTimeString(),
                 type: "Call",
                 timestamp: new Date().toISOString(),
+                name:name
             };
 
             setAllHistory([newEntry, ...allHistory]);
@@ -21,6 +22,7 @@ function FriendProvider({ children }) {
                 time: new Date().toLocaleTimeString(),
                 type: "Massage",
                 timestamp: new Date().toISOString(),
+                name:name
             };
 
             setAllHistory([newEntry, ...allHistory]);
@@ -31,6 +33,7 @@ function FriendProvider({ children }) {
                 time: new Date().toLocaleTimeString(),
                 type: "Video",
                 timestamp: new Date().toISOString(),
+                name:name
             };
 
             setAllHistory([newEntry, ...allHistory]);
