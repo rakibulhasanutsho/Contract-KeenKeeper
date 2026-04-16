@@ -20,7 +20,7 @@ function Navbar() {
             <p>Timeline</p>
         </div>
        </NavLink>
-       <NavLink className={({ isActive }) => `font-semibold rounded-xl   bg-none mr-3 p-2 px-4 ${isActive ? "bg-green-900 text-white " : ""}`} to={"/statspage"}>
+       <NavLink className={({ isActive }) => `font-semibold rounded-xl   bg-none mr-3 p-2 px-4 ${isActive ? "bg-green-900 text-white " : ""}`} to={"/statuspage"}>
          <div className='flex gap-1'>
             <MdOutlineQueryStats className='my-auto font-bold'></MdOutlineQueryStats>
             <p>Stats</p>

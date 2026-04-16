@@ -6,9 +6,11 @@ import { RouterProvider } from "react-router/dom";
 import MainLayout from './layout/mainlayout/MainLayout'
 import Homepage from './pages/homepage/Homepage'
 import TimeLine from './pages/timeline/TimeLine'
-import StatsPage from './pages/statspage/StatsPage'
+
 import FriendDetailsPage from './pages/friendsdetails/FriendDetailsPage';
 import FriendProvider from './components/friendcontext/FriendContext';
+import StatusPage from './pages/statuspage/StatusPage';
+import NotFoundPage from './pages/notfound/NotFoundPage';
 const router = createBrowserRouter(
 [
   {
@@ -25,13 +27,17 @@ const router = createBrowserRouter(
         element:<TimeLine></TimeLine>
       },
       {
-        path:"/statspage",
-        element: <StatsPage></StatsPage>
+        path:"/statuspage",
+        element: <StatusPage></StatusPage>
       },
       {
         path:"/friendsdetails/:friendId",
         element:<FriendDetailsPage></FriendDetailsPage>,
         loader:()=>fetch("/friends.json")
+      },
+      {
+        path:"*",
+        element: <NotFoundPage></NotFoundPage>
       }
 
     ]

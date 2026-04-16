@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { use, useState } from "react";
 import { FriendContext } from "./HistoryContext";
 import { ToastContainer, toast } from 'react-toastify';
+
 function FriendProvider({ children }) {
     const [allHistory, setAllHistory] = useState([])
+    
 
     const addToHistory = ({ name, type }) => {
         if (type === 'Call') {
@@ -47,7 +49,7 @@ function FriendProvider({ children }) {
             allHistory,
             setAllHistory,
             name,
-            
+           
             
         }
 

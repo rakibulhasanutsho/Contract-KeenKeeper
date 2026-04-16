@@ -11,7 +11,7 @@ function TimeLine() {
   const { allHistory, setAllHistory, name, type } = useContext(FriendContext)
   console.log("hi", allHistory, setAllHistory)
   return (
-    <div className='w-[1140px] mx-auto mt-20'>
+    <div className='w-[1140px] mx-auto my-20'>
       <div>
         <h2 className='text-5xl font-bold'>Timeline</h2>
         <button></button>

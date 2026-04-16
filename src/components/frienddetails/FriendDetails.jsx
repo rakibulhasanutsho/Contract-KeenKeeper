@@ -75,10 +75,10 @@ function FriendDetails() {
     }
         return (
 
-            <div className='flex gap-10 mb-10'>
+            <div className='flex gap-10 my-10'>
                 <div className='flex-1'>
                     <div className='shadow-sm text-center space-y-3 p-5'>
-                        <img className='w-15 rounded-full mx-auto' src={picture} alt="" />
+                        <img className='w-20 rounded-full mx-auto' src={picture} alt="" />
                         <p className={`text-white rounded-2xl px-2 p-1 font-medium w-25 mx-auto ${status === "Overdue" ? "bg-red-500" : status === 'On-Track' ? "bg-green-700" : "bg-amber-500"}`}>{status}</p>
                         <ul className='flex gap-2 justify-center'>
                             {
@@ -134,17 +134,17 @@ function FriendDetails() {
                     <div className='p-7 shadow-sm rounded-2xl'>
                         <h4 className='text-xl font-bold font-[#244D3F] mb-5 '>Quick Check-In</h4>
                         <div className='flex  justify-between '>
-                            <div onClick={() => handleConnection('Call')} className='p-7 px-15 shadow-sm border border-gray-400 bg-[#E9E9E9] rounded'>
+                            <div onClick={() => handleConnection('Call')} className='p-7 px-15 shadow-sm border border-gray-400 bg-[#E9E9E9] rounded cursor-pointer'>
 
                                 <LuPhoneCall className='mx-auto ' size={24} />
                                 <p className='font-medium'>Call</p>
 
                             </div>
-                            <div onClick={() => handleConnection('Massage')} className='p-7 px-15 shadow-sm border border-gray-400 bg-[#E9E9E9] rounded'>
+                            <div onClick={() => handleConnection('Massage')} className='p-7 px-15 shadow-sm border border-gray-400 bg-[#E9E9E9] rounded cursor-pointer'>
                                 <MdOutlineTextsms className='mx-auto ' size={24}> </MdOutlineTextsms>
                                 <p className='font-medium'>Massage</p>
                             </div>
-                            <div onClick={() => handleConnection('Video')} className='p-7 px-15 shadow-sm border border-gray-400 bg-[#E9E9E9] rounded'>
+                            <div onClick={() => handleConnection('Video')} className='p-7 px-15 shadow-sm border border-gray-400 bg-[#E9E9E9] rounded cursor-pointer'>
                                 <MdVideoCall className='mx-auto' size={24}></MdVideoCall>
                                 <p className='font-medium'> Video </p>
                             </div>

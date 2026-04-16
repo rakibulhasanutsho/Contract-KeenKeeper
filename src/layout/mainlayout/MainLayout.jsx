@@ -8,7 +8,7 @@ import Footer from '../../components/footer/Footer'
 
 function MainLayout() {
   return (
-    <div className='space-y-10'>
+    <div >
         <Navbar></Navbar>
         <Outlet></Outlet>
         <Footer></Footer>
