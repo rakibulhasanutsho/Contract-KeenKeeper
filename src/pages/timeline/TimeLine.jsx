@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { FriendContext } from '../../components/friendcontext/HistoryContext'
 import { FaHandshakeSimple } from "react-icons/fa6";
 import { SiPanasonic } from 'react-icons/si';
@@ -8,22 +8,51 @@ import { Link } from 'react-router';
 import EmptyCallLog from '../../components/calllognotfound/CallLogNotFound';
 
 function TimeLine() {
-  const { allHistory, setAllHistory, name, type } = useContext(FriendContext)
-  console.log("hi", allHistory, setAllHistory)
+  const { allHistory, setAllHistory } = useContext(FriendContext)
+  const [sortingType, setSortingType] = useState("")
+  const [filterTimeline, setFilterTimeline] = useState(allHistory)
+  
+  
+
+  useEffect(() => {
+    if (sortingType === "Call") {
+      const onlyCalls = allHistory.filter(history => history.type === "Call");
+      setFilterTimeline(onlyCalls)
+    }
+
+    else if (sortingType === "Message") {
+      const onlyCalls = allHistory.filter(history => history.type === "Message");
+      setFilterTimeline(onlyCalls)
+    }
+    else if (sortingType === "Video") {
+      const onlyCalls = allHistory.filter(history => history.type === "Video");
+      setFilterTimeline(onlyCalls)
+    }
+  }, [sortingType, allHistory])
+
+ 
+
   return (
-    <div className='w-[1140px] mx-auto my-20'>
-      <div>
+    <div className='w-[1140px] mx-auto my-20 '>
+      <div className='space-y-5'>
         <h2 className='text-5xl font-bold'>Timeline</h2>
-        <button></button>
+        <details className="dropdown">
+          <summary className="btn m-1">Filter timeline</summary>
+          <ul className="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+            <li onClick={() => setSortingType("Call")}>Calls</li>
+            <li onClick={() => setSortingType("Message")}>Messages</li>
+            <li onClick={() => setSortingType("Video")}>Video calls</li>
+          </ul>
+        </details>
         <div>
           {
-            allHistory.length === 0 ?
+            filterTimeline.length === 0 ?
               <div>
                 <EmptyCallLog></EmptyCallLog>
               </div> :
               <div className='space-y-4 '>
                 {
-                  allHistory.map((history, index) => <div key={index} >
+                  filterTimeline.map((history, index) => <div key={index} >
                     {history.type === "Call"
                       ?
                       <div className='flex gap-3 p-5 px-10 shadow-sm'>
