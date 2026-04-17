@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 
 const EmptyCallLog = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[400px] p-6 text-center bg-gray-50 rounded-3xl">
+    <div className="flex flex-col w-full items-center justify-center  p-6 text-center bg-gray-50 rounded-3xl">
       {/* Icon Container */}
       <div className="relative mb-6">
         {/* Decorative Glow */}
@@ -20,7 +20,7 @@ const EmptyCallLog = () => {
       <h3 className="text-xl font-semibold text-gray-900">
         No calls or messages
       </h3>
-      <p className="mt-2 text-sm text-gray-500 max-w-[240px] mx-auto leading-relaxed">
+      <p className="mt-2 text-sm text-gray-500 mx-auto leading-relaxed">
         Your recent activity will appear here once you start reaching out to friends.
       </p>
 

@@ -34,7 +34,7 @@ function TimeLine() {
  
 
   return (
-    <div className='w-[1140px] mx-auto my-20 '>
+    <div className='w-full md:[950px] lg:w-[1140px] mx-auto my-20 '>
       <div className='space-y-5'>
         <h2 className='text-5xl font-bold'>Timeline</h2>
         <details className="dropdown flex gap-3">
