@@ -4,8 +4,9 @@ import { FaHandshakeSimple } from "react-icons/fa6";
 import { SiPanasonic } from 'react-icons/si';
 import { LiaVideoSolid } from "react-icons/lia";
 import { BsChatText } from "react-icons/bs";
-import { Link } from 'react-router';
+import { Link, NavLink } from 'react-router';
 import EmptyCallLog from '../../components/calllognotfound/CallLogNotFound';
+import { RiArrowDropDownLine } from 'react-icons/ri';
 
 function TimeLine() {
   const { allHistory, setAllHistory } = useContext(FriendContext)
@@ -36,12 +37,16 @@ function TimeLine() {
     <div className='w-[1140px] mx-auto my-20 '>
       <div className='space-y-5'>
         <h2 className='text-5xl font-bold'>Timeline</h2>
-        <details className="dropdown">
-          <summary className="btn m-1">Filter timeline</summary>
+        <details className="dropdown flex gap-3">
+         
+
+            <summary className="btn  bg-green-800 px-5 text-white m-1"><span className='text-white'>Filter timeline</span></summary>
+            <RiArrowDropDownLine />
+         
           <ul className="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-            <li onClick={() => setSortingType("Call")}>Calls</li>
-            <li onClick={() => setSortingType("Message")}>Messages</li>
-            <li onClick={() => setSortingType("Video")}>Video calls</li>
+            <NavLink   onClick={() => setSortingType("Call")}>Calls</NavLink>
+            <NavLink onClick={() => setSortingType("Message")}>Messages</NavLink>
+            <NavLink onClick={() => setSortingType("Video")}>Video calls</NavLink>
           </ul>
         </details>
         <div>
