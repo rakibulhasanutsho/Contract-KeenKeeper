@@ -30,7 +30,7 @@ function TimeLine() {
                         <FaHandshakeSimple className='my-auto' size={24} />
                         <div>
                           <p><span className='font-semibold text-[#244D3F] text-xl'>Meetup</span> <span className='text-[#64748B]'>With {history.name}</span></p>
-                          <p></p>
+                          <p>{new Date(history.timestamp).toLocaleDateString('default', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
                         </div>
                       </div>
                       : history.type === "Message"
@@ -40,13 +40,15 @@ function TimeLine() {
                           <BsChatText className='my-auto' size={24} />
                           <div>
                             <p><span className='font-semibold text-[#244D3F] text-xl'>Text</span> <span className='text-[#64748B]'>With {history.name}</span></p>
-                            <p></p>
+                            <p>{new Date(history.timestamp).toLocaleDateString('default', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
                           </div>
                         </div>
                         : <div className='flex gap-3 p-5 px-10 shadow-sm'>
                           <LiaVideoSolid className='my-auto' size={24} />
-                          <p><span className='font-semibold text-[#244D3F] text-xl'>Video Call</span> <span className='text-[#64748B]'>With {history.name}</span></p>
-                          <p></p>
+                          <div className=''>
+                            <p><span className='font-semibold text-[#244D3F] text-xl'>Video Call</span> <span className='text-[#64748B]'>With {history.name}</span></p>
+                            <p>{new Date(history.timestamp).toLocaleDateString('default', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
+                          </div>
                         </div>
 
                     }

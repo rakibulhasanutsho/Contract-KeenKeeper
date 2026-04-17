@@ -48,7 +48,7 @@ function FriendDetails() {
                 type: "Call",
                 name:name
             };
-            toast.success(`Calling ${name}`)
+            toast.success(`Call with ${name}`)
             setCallHistory([newEntry, ...callHistory]);
         }
         else if (type === 'Massage') {
@@ -68,7 +68,7 @@ function FriendDetails() {
                 type:"Video",
                 name:name
             };
-            toast.success(` Video Calling ${name}`)
+            toast.success(` Video Call with ${name}`)
             setCallHistory([newEntry, ...callHistory]);
         }
        
@@ -134,17 +134,17 @@ function FriendDetails() {
                     <div className='p-7 shadow-sm rounded-2xl'>
                         <h4 className='text-xl font-bold font-[#244D3F] mb-5 '>Quick Check-In</h4>
                         <div className='flex  justify-between '>
-                            <div onClick={() => handleConnection('Call')} className='p-7 px-15 shadow-sm border border-gray-400 bg-[#E9E9E9] rounded cursor-pointer'>
+                            <div onClick={() => handleConnection('Call')} className='p-7 px-15 shadow-sm border border-gray-200 bg-[#F8FAFC] rounded cursor-pointer'>
 
                                 <LuPhoneCall className='mx-auto ' size={24} />
                                 <p className='font-medium'>Call</p>
 
                             </div>
-                            <div onClick={() => handleConnection('Massage')} className='p-7 px-15 shadow-sm border border-gray-400 bg-[#E9E9E9] rounded cursor-pointer'>
+                            <div onClick={() => handleConnection('Massage')} className='p-7 px-15 shadow-sm border border-gray-200 bg-[#F8FAFC] rounded cursor-pointer'>
                                 <MdOutlineTextsms className='mx-auto ' size={24}> </MdOutlineTextsms>
                                 <p className='font-medium'>Massage</p>
                             </div>
-                            <div onClick={() => handleConnection('Video')} className='p-7 px-15 shadow-sm border border-gray-400 bg-[#E9E9E9] rounded cursor-pointer'>
+                            <div onClick={() => handleConnection('Video')} className='p-7 px-15 shadow-sm border border-gray-200 bg-[#F8FAFC] rounded cursor-pointer'>
                                 <MdVideoCall className='mx-auto' size={24}></MdVideoCall>
                                 <p className='font-medium'> Video </p>
                             </div>
@@ -165,7 +165,7 @@ function FriendDetails() {
                                     <div className='flex gap-4'>
                                         <LuPhoneCall size={24} className='my-auto'></LuPhoneCall>
                                         <span>
-                                            <p className='font-medium text-xl'>Text</p>
+                                            <p className='font-medium text-xl'>Meetup</p>
                                             <p className='text[#64748B]'>Asked for career advice</p>
                                         </span>
                                     </div>
@@ -176,7 +176,7 @@ function FriendDetails() {
                                     <div className='flex gap-4'>
                                         <MdOutlineTextsms size={24} className='my-auto'></MdOutlineTextsms>
                                         <span>
-                                            <p className='font-medium text-xl'>Meetup</p>
+                                            <p className='font-medium text-xl'>Text</p>
                                             <p className='text[#64748B]'>Industry conference meetup</p>
                                         </span>
                                     </div>
