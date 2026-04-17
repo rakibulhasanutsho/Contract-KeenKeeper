@@ -32,14 +32,14 @@ function StatusPage() {
 ];
   return (
     <div className='bg-[#F8FAFC]'>
-      <div className='w-[1140px] mx-auto p-10'>
-        <h1 className=' text-5xl font-bold text-green-800'>Friendship Analytics</h1>
+      <div className=' w-full md:w-[950px] lg:w-[1140px] mx-auto p-3 md:p-10'>
+        <h1 className='text-2xl md:text-5xl font-bold text-green-800'>Friendship Analytics</h1>
         {
           allHistory.length === 0 ? 
-          <div className='min-h-screen bg-[#F8FAFC] flex flex-col items-center justify-center p-10'>
+          <div className=' bg-[#F8FAFC] flex flex-col items-center justify-center p-3 md:p-10'>
         <div className='text-center bg-white p-12 rounded-2xl shadow-sm border border-gray-100 max-w-lg'>
           {/* Ekhan ekti image ba icon dite paren */}
-          <div className='text-6xl mb-4'>📊</div> 
+          <div className='text-3xl md:text-6xl mb-4'>📊</div> 
           <h1 className='text-3xl font-bold text-gray-800 mb-2'>No History Found</h1>
           <p className='text-gray-500 mb-6'>
             Apnar friendship analytics dekharnor moto kono data ekhon o nei. 
@@ -53,9 +53,9 @@ function StatusPage() {
           </button>
         </div>
       </div> :
-      <div className=' flex justify-center flex-col items-center    my-10 bg-white w-[1140px] mx-auto  rounded p-15  '>
+      <div className=' flex justify-center flex-col items-center    my-10 bg-white w-full md:w-[950px] lg:w-[1140px] mx-auto  rounded p-15  '>
           <h4 className='text-xl font-medium text-wrap '>By Interaction Type</h4>
-          <PieChart className='mt-20' style={{ width: '100%', maxWidth: '600px', maxHeight: '100vh', aspectRatio: 1 }} responsive>
+          <PieChart className='mt-20' style={{ width: '100%', maxWidth: '95%', maxHeight: '100vh', aspectRatio: 1 }} responsive>
             <Pie
               data={data}
               innerRadius="80%"

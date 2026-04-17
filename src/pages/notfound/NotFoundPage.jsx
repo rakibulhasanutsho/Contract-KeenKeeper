@@ -1,6 +1,11 @@
 import React from 'react'
+import { Link, useNavigate } from 'react-router'
 
 function NotFoundPage() {
+  const navigate = useNavigate()
+  const handleGoBack = ()=>{
+    navigate(-1)
+  }
   return (
     <div className="min-h-screen bg-white flex flex-col items-center justify-center p-5">
       {/* Visual Element */}
@@ -8,7 +13,7 @@ function NotFoundPage() {
         <h1 className="text-[12rem] font-extrabold text-gray-100 select-none">
           404
         </h1>
-        <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-4xl font-bold text-green-700 whitespace-nowrap">
+        <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl md:text-4xl font-bold text-green-700 whitespace-nowrap">
           Oops! Page Not Found
         </p>
       </div>
@@ -22,15 +27,15 @@ function NotFoundPage() {
 
         {/* Action Buttons */}
         <div className="flex gap-4 justify-center">
-          <button
-            onClick={() => navigate('/')}
+          <Link
+            to={"/"}
             className="px-8 py-3 bg-green-600 text-white font-semibold rounded-full hover:bg-green-700 transition-all shadow-lg shadow-green-200"
           >
             Back to Home
-          </button>
+          </Link>
           
           <button
-            onClick={() => navigate(-1)}
+            onClick={handleGoBack}
             className="px-8 py-3 bg-gray-100 text-gray-700 font-semibold rounded-full hover:bg-gray-200 transition-all"
           >
             Go Back

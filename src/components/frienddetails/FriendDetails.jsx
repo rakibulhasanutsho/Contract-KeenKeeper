@@ -75,8 +75,8 @@ function FriendDetails() {
     }
         return (
 
-            <div className='flex gap-10 my-10'>
-                <div className='flex-1'>
+            <div className='flex flex-col md:flex-row gap-10 my-10'>
+                <div className='md:flex-1'>
                     <div className='shadow-sm text-center space-y-3 p-5'>
                         <img className='w-20 rounded-full mx-auto' src={picture} alt="" />
                         <p className={`text-white rounded-2xl px-2 p-1 font-medium w-25 mx-auto ${status === "Overdue" ? "bg-red-500" : status === 'On-Track' ? "bg-green-700" : "bg-amber-500"}`}>{status}</p>
@@ -92,15 +92,15 @@ function FriendDetails() {
 
                     </div>
                     <div className='my-5 space-y-3'>
-                        <span className='flex gap-2 justify-center p-2 w-full shadow-sm'>
+                        <span className='flex gap-2 justify-center p-2 w-full shadow-sm mb-3'>
                             <RiTimerFlashLine className='my-auto'></RiTimerFlashLine>
                             <p className='font-semibold '>Snooze 2 Weeks</p>
                         </span>
-                        <span className='flex gap-2 justify-center  p-2 w-full shadow-sm'>
+                        <span className='flex gap-2 justify-center  p-2 w-full shadow-sm mb-3'>
                             <RiArchiveLine className='my-auto'></RiArchiveLine>
                             <p className='font-semibold '>Archive</p>
                         </span>
-                        <span className='flex justify-center gap-2 p-2 w-full shadow-sm '>
+                        <span className='flex justify-center gap-2 p-2 w-full shadow-sm mb-3'>
                             <RiDeleteBin6Line className='my-auto'></RiDeleteBin6Line>
                             <p className='font-semibold text-red-400 '>Delete</p>
                         </span>
@@ -108,18 +108,18 @@ function FriendDetails() {
 
                     </div>
                 </div>
-                <div className='flex-2 space-y-5'>
-                    <div className='flex justify-between'>
-                        <div className='p-5 px-7 shadow-sm text-center rounded'>
+                <div className='md:flex-2 space-y-5'>
+                    <div className='flex flex-col md:flex-row justify-between'>
+                        <div className='p-5 px-7 shadow-sm text-center rounded mb-3'>
                             <h3 className='text-3xl font-bold text-[#244D3F]'>{days_since_contact}</h3>
                             <p className='text-[#64748B]'>Days Since Contact</p>
                         </div>
-                        <div className='p-5 shadow-sm text-center rounded'>
+                        <div className='p-5 shadow-sm text-center rounded mb-3'>
                             <h3 className='text-3xl font-bold text-[#244D3F]'>{goal}</h3>
                             <p className="text-[#64748B]">Goal (Days)</p>
                         </div>
 
-                        <div className='p-5 shadow-sm text-center rounded'>
+                        <div className='p-5 shadow-sm text-center rounded mb-3'>
                             <h3 className='text-3xl font-bold text-[#244D3F]'>{next_due_date}</h3>
                             <p className='text-[#64748B]'> Next Due</p>
                         </div>
@@ -133,18 +133,18 @@ function FriendDetails() {
                     </div>
                     <div className='p-7 shadow-sm rounded-2xl'>
                         <h4 className='text-xl font-bold font-[#244D3F] mb-5 '>Quick Check-In</h4>
-                        <div className='flex  justify-between '>
-                            <div onClick={() => handleConnection('Call')} className='p-7 px-15 shadow-sm border border-gray-200 bg-[#F8FAFC] rounded cursor-pointer'>
+                        <div className='flex flex-col md:flex-row  justify-between '>
+                            <div onClick={() => handleConnection('Call')} className='p-7 px-15 shadow-sm border border-gray-200 bg-[#F8FAFC] rounded cursor-pointer mb-3'>
 
                                 <LuPhoneCall className='mx-auto ' size={24} />
                                 <p className='font-medium'>Call</p>
 
                             </div>
-                            <div onClick={() => handleConnection('Massage')} className='p-7 px-15 shadow-sm border border-gray-200 bg-[#F8FAFC] rounded cursor-pointer'>
+                            <div onClick={() => handleConnection('Massage')} className='p-7 px-15 shadow-sm border border-gray-200 bg-[#F8FAFC] rounded cursor-pointer mb-3'>
                                 <MdOutlineTextsms className='mx-auto ' size={24}> </MdOutlineTextsms>
                                 <p className='font-medium'>Massage</p>
                             </div>
-                            <div onClick={() => handleConnection('Video')} className='p-7 px-15 shadow-sm border border-gray-200 bg-[#F8FAFC] rounded cursor-pointer'>
+                            <div onClick={() => handleConnection('Video')} className='p-7 px-15 shadow-sm border border-gray-200 bg-[#F8FAFC] rounded cursor-pointer mb-3'>
                                 <MdVideoCall className='mx-auto' size={24}></MdVideoCall>
                                 <p className='font-medium'> Video </p>
                             </div>
